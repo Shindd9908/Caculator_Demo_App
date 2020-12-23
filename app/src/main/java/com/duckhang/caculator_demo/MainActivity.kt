@@ -10,8 +10,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val fragment = Calculators()
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.fragment_caculator, fragment)
-        transaction.commit()
+                   .add(R.id.fragment_caculator, fragment)
+                   .commit()
 
     }
 

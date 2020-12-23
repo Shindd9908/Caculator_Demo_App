@@ -1,6 +1,5 @@
 package com.duckhang.caculator_demo
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,18 +11,16 @@ class Calculators : Fragment() {
 
     private var input1 = 0.0
     private var input2 = 0.0
-    private var add = false
-    private var sub = false
-    private var mul = false
-    var div = false
-    private var per = false
-
+    private var canadd = false
+    private var cansub = false
+    private var canmul = false
+    private var candiv = false
+    private var canper = false
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View?
-    {
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_caculator, container, false)
 
@@ -32,96 +29,83 @@ class Calculators : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        button_num0.setOnClickListener { text_result.append("0") }
+        button_num1.setOnClickListener { text_result.append("1") }
+        button_num2.setOnClickListener { text_result.append("2") }
+        button_num3.setOnClickListener { text_result.append("3") }
+        button_num4.setOnClickListener { text_result.append("4") }
+        button_num5.setOnClickListener { text_result.append("5") }
+        button_num6.setOnClickListener { text_result.append("6") }
+        button_num7.setOnClickListener { text_result.append("7") }
+        button_num8.setOnClickListener { text_result.append("8") }
+        button_num9.setOnClickListener { text_result.append("9") }
+        button_dot.setOnClickListener { text_result.append(".") }
 
 
-
-        btn_n0.setOnClickListener {tv_result.append("0")}
-        btn_n1.setOnClickListener {tv_result.append("1")}
-        btn_n2.setOnClickListener {tv_result.append("2")}
-        btn_n3.setOnClickListener {tv_result.append("3")}
-        btn_n4.setOnClickListener {tv_result.append("4")}
-        btn_n5.setOnClickListener {tv_result.append("5")}
-        btn_n6.setOnClickListener {tv_result.append("6")}
-        btn_n7.setOnClickListener {tv_result.append("7")}
-        btn_n8.setOnClickListener {tv_result.append("8")}
-        btn_n9.setOnClickListener {tv_result.append("9")}
-        btn_dot.setOnClickListener {tv_result.append(".")}
-
-
-        btn_add.setOnClickListener {
-            add = true
-
-            input1 = tv_result.text.toString().toDouble()
-            tv_result.text = ""
+        button_add.setOnClickListener {
+            canadd = true
+            input1 = text_result.text.toString().toDouble()
+            text_result.text = ""
 
         }
-        btn_sub.setOnClickListener {
-            sub = true
-
-            input1 = tv_result.text.toString().toDouble()
-            tv_result.text = ""
+        button_sub.setOnClickListener {
+            cansub = true
+            input1 = text_result.text.toString().toDouble()
+            text_result.text = ""
         }
-        btn_mul.setOnClickListener {
-            mul = true
-            input1 = tv_result.text.toString().toDouble()
-            tv_result.text = ""
+        button_multiplication.setOnClickListener {
+            canmul = true
+            input1 = text_result.text.toString().toDouble()
+            text_result.text = ""
         }
-        btn_div.setOnClickListener {
-            div = true
-            input1 = tv_result.text.toString().toDouble()
-            tv_result.text = ""
-        }
-
-        btn_ac.setOnClickListener {
-            tv_result.text = ""
+        button_div.setOnClickListener {
+            candiv = true
+            input1 = text_result.text.toString().toDouble()
+            text_result.text = ""
         }
 
-        btn_c.setOnClickListener {
-            val number = tv_result.text.toString().length
+        button_AC.setOnClickListener {
+            text_result.text = ""
+        }
 
-            val delete = tv_result.text.toString().substring(0, number -1)
-            tv_result.text = delete
+        button_C.setOnClickListener {
+            val number = text_result.text.toString().length
+            val delete = text_result.text.toString().substring(0, number - 1)
+            text_result.text = delete
         }
-        btn_per.setOnClickListener {
-            per = true
-            input1 = tv_result.text.toString().toDouble()
-            tv_result.text = ""
+
+        button_divTo.setOnClickListener {
+            canper = true
+            input1 = text_result.text.toString().toDouble()
+            text_result.text = ""
         }
-        btn_result.setOnClickListener {
+
+        button_result.setOnClickListener {
+            input2 = text_result.text.toString().toDouble()
             when {
-                add -> {
-                    input2 = tv_result.text.toString().toDouble()
-                    tv_result.text = (input1 + input2).toString()
-                    add = false
-
+                canadd -> {
+                    text_result.text = (input1 + input2).toString()
+                    canadd = false
                 }
-                sub -> {
-                    input2 = tv_result.text.toString().toDouble()
-                    tv_result.text = (input1 - input2).toString()
-                    sub = false
+                cansub -> {
+                    text_result.text = (input1 - input2).toString()
+                    cansub = false
                 }
-                mul -> {
-                    input2 = tv_result.text.toString().toDouble()
-                    tv_result.text = (input1 * input2).toString()
-                    mul = false
+                canmul -> {
+                    text_result.text = (input1 * input2).toString()
+                    canmul = false
                 }
-                div -> {
-                    input2 = tv_result.text.toString().toDouble()
-                    tv_result.text = (input1 / input2).toString()
-                    div = false
+                candiv -> {
+                    text_result.text = (input1 / input2).toString()
+                    candiv = false
                 }
-                per -> {
-                    input2 = tv_result.text.toString().toDouble()
-                    tv_result.text = (input1 * input2 /100).toString()
-                    per = false
+                canper -> {
+                    text_result.text = (input1 * input2 / 100).toString()
+                    canper = false
                 }
             }
         }
-
-
     }
 }
-
-
 
 
