@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_700"
+    android:background="@color/faded_jade"
     tools:context=".MainActivity">
 
     <View
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorBg"
+        android:background="@color/Heavy_Metal"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:gravity="end|center"
         android:maxLines="1"
         android:padding="@dimen/dp_8"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/White"
         android:textSize="@dimen/sp_60"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,14 +42,14 @@
         android:fontFamily="@font/font_family_ptsans"
         android:gravity="end|center"
         android:maxLines="1"
-        android:padding="8dp"
-        android:textColor="@color/colorWhite"
-        android:textSize="40sp"
+        android:padding="@dimen/dp_8"
+        android:textColor="@color/White"
+        android:textSize="@dimen/sp_40"
         android:scrollHorizontally="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_result"
-        tools:text="0" />
+        tools:text="@string/num_zero" />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -303,14 +303,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="391dp" />
+        app:layout_constraintGuide_end="@dimen/dp_391" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_begin="@dimen/dp_20" />
 
     <ImageView
         android:id="@+id/toggle_nav"
@@ -327,7 +327,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="20dp" />
+        app:layout_constraintGuide_end="@dimen/dp_20" />
 
     <ImageView
         android:id="@+id/imageView3"
