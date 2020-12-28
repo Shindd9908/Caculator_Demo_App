@@ -20,4 +20,7 @@
     <string name="dot">.</string>
     <string name="equal">=</string>
     <string name="add">+</string>
+    <string name="img_todo">todo</string>
+    <string name="pi">π</string>
+    <string name="pi_db">3.141592654</string>
 </resources>

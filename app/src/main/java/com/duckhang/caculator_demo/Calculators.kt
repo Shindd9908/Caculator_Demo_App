@@ -42,13 +42,12 @@ class Calculators : Fragment() {
         button_dot.setOnClickListener { text_result.append(".") }
 
 
-        button_add.setOnClickListener {
+        button_addition_operation.setOnClickListener {
             canadd = true
             input1 = text_result.text.toString().toDouble()
             text_result.text = ""
-
         }
-        button_sub.setOnClickListener {
+        button_subtract_operation.setOnClickListener {
             cansub = true
             input1 = text_result.text.toString().toDouble()
             text_result.text = ""
@@ -74,13 +73,15 @@ class Calculators : Fragment() {
             text_result.text = delete
         }
 
-        button_divTo.setOnClickListener {
+        button_pi.setOnClickListener { text_result.text = getString(R.string.pi_db) }
+
+        button_percentage.setOnClickListener {
             canper = true
             input1 = text_result.text.toString().toDouble()
             text_result.text = ""
         }
 
-        button_result.setOnClickListener {
+        button_submission_operation.setOnClickListener {
             input2 = text_result.text.toString().toDouble()
             when {
                 canadd -> {
