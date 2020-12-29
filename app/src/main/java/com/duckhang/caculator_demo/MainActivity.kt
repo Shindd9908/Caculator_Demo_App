@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val fragment = Calculators()
-        val transaction = supportFragmentManager.beginTransaction()
+        supportFragmentManager.beginTransaction()
                    .add(R.id.fragment_caculator, fragment)
                    .commit()
 
@@ -18,5 +18,4 @@ class MainActivity : AppCompatActivity() {
 
 
 }
-
 
