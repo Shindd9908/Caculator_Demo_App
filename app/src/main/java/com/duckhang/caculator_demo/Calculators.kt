@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_caculator.*
 
 class Calculators : Fragment() {
-
+class CalculatorFragment : Fragment() {
     private var input1 = 0.0
     private var input2 = 0.0
     private var canadd = false
@@ -108,5 +108,4 @@ class Calculators : Fragment() {
         }
     }
 }
-
 
