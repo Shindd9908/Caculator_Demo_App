@@ -69,7 +69,7 @@ class CalculatorFragment : Fragment() {
 
         button_C.setOnClickListener {
             val number = text_result.text.toString().length
-            val delete = text_result.text.toString().substring(0, number - 1)
+val textDelete = text_result.text.toString().substring(0, number - 1)
             text_result.text = delete
         }
 
@@ -108,4 +108,3 @@ class CalculatorFragment : Fragment() {
         }
     }
 }
-
